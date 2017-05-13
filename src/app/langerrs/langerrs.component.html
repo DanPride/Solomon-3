@@ -1,0 +1,305 @@
+<div class="container">	
+    <div *ngIf="selectedLangerr" class="selectedLangerr">
+       <div class="row">
+        <div class="card text-xs-center">
+             <div class="card-block">
+                <div class="card-header">
+                <fieldset class="form-group  col-md-12">
+                  {{selectedLangerr.Lang}}
+                    </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLangerr.Id}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLangerr.DFC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLangerr.DLC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLangerr.User}}
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                      <label>Lang: </label>
+                      <input [(ngModel)]="selectedLangerr.Lang" placeholder="Lang"/>
+                </fieldset>
+					   <fieldset class="form-group  col-md-12">
+                      <label>CellCodeInvalid: </label>
+                      <input [(ngModel)]="selectedLangerr.CellCodeInvalid" placeholder="CellCodeInvalid"/>
+              </fieldset>
+              <fieldset class="form-group  col-md-12">
+                      <label>CellCodeNoMatch: </label>
+                      <input [(ngModel)]="selectedLangerr.CellCodeNoMatch" placeholder="CellCodeNoMatch"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>CellProvider: </label>
+                      <input [(ngModel)]="selectedLangerr.CellProvider" placeholder="CellProvider"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>DeleteConflictMessage: </label>
+                      <input [(ngModel)]="selectedLangerr.DeleteConflictMessage" placeholder="DeleteConflictMessage"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>DriveLongest: </label>
+                      <input [(ngModel)]="selectedLangerr.DriveLongest" placeholder="DriveLongest"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EnterDescrip: </label>
+                      <input [(ngModel)]="selectedLangerr.EnterDescrip" placeholder="EnterDescrip"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EnterDomain: </label>
+                      <input [(ngModel)]="selectedLangerr.EnterDomain" placeholder="EnterDomain"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EmailDup: </label>
+                      <input [(ngModel)]="selectedLangerr.EmailDup" placeholder="EmailDup"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EmailRequired: </label>
+                      <input [(ngModel)]="selectedLangerr.EmailRequired" placeholder="EmailRequired"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EmailReset: </label>
+                      <input [(ngModel)]="selectedLangerr.EmailReset" placeholder="EmailReset"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EventDate: </label>
+                      <input [(ngModel)]="selectedLangerr.EventDate" placeholder="EventDate"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EventEndTime: </label>
+                      <input [(ngModel)]="selectedLangerr.EventEndTime" placeholder="EventEndTime"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EventName: </label>
+                      <input [(ngModel)]="selectedLangerr.EventName" placeholder="EventName"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EventStartTime: </label>
+                      <input [(ngModel)]="selectedLangerr.EventStartTime" placeholder="EventStartTime"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EventUpdate: </label>
+                      <input [(ngModel)]="selectedLangerr.EventUpdate" placeholder="EventUpdate"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>FromToSame: </label>
+                      <input [(ngModel)]="selectedLangerr.FromToSame" placeholder="FromToSame"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>FaceBook: </label>
+                      <input [(ngModel)]="selectedLangerr.FaceBook" placeholder="FaceBook"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>GooglePlus: </label>
+                      <input [(ngModel)]="selectedLangerr.GooglePlus" placeholder="GooglePlus"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>LateBeforeEarly: </label>
+                      <input [(ngModel)]="selectedLangerr.LateBeforeEarly" placeholder="LateBeforeEarly"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>MapAddress: </label>
+                      <input [(ngModel)]="selectedLangerr.MapAddress" placeholder="MapAddress"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>MailPrefs: </label>
+                      <input [(ngModel)]="selectedLangerr.MailPrefs" placeholder="MailPrefs"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>NameFour: </label>
+                      <input [(ngModel)]="selectedLangerr.NameFour" placeholder="NameFour"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>NameFull: </label>
+                      <input [(ngModel)]="selectedLangerr.NameFull" placeholder="NameFull"/>
+              </fieldset>
+
+               <fieldset class="form-group  col-md-12">
+                      <label>PasswordSix: </label>
+                      <input [(ngModel)]="selectedLangerr.PasswordSix" placeholder="PasswordSix"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>PasswordConfirm: </label>
+                      <input [(ngModel)]="selectedLangerr.PasswordConfirm" placeholder="PasswordConfirm"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>PasswordMisMatch: </label>
+                      <input [(ngModel)]="selectedLangerr.PasswordMisMatch" placeholder="PasswordMisMatch"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>Phone: </label>
+                      <input [(ngModel)]="selectedLangerr.Phone" placeholder="Phone"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>PostUrl: </label>
+                      <input [(ngModel)]="selectedLangerr.PostUrl" placeholder="PostUrl"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>PostText: </label>
+                      <input [(ngModel)]="selectedLangerr.PostText" placeholder="PostText"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>RecordNotSaved: </label>
+                      <input [(ngModel)]="selectedLangerr.RecordNotSaved" placeholder="RecordNotSaved"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>RideShortest: </label>
+                      <input [(ngModel)]="selectedLangerr.RideShortest" placeholder="RideShortest"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>Route: </label>
+                      <input [(ngModel)]="selectedLangerr.Route" placeholder="Route"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SearchTerms: </label>
+                      <input [(ngModel)]="selectedLangerr.SearchTerms" placeholder="SearchTerms"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectDate: </label>
+                      <input [(ngModel)]="selectedLangerr.SelectDate" placeholder="SelectDate"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectDest: </label>
+                      <input [(ngModel)]="selectedLangerr.SelectDest" placeholder="SelectDest"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectEarly: </label>
+                      <input [(ngModel)]="selectedLangerr.SelectEarly" placeholder="SelectEarly"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectEndTime: </label>
+                      <input [(ngModel)]="selectedLangerr.SelectEndTime" placeholder="SelectEndTime"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectLate: </label>
+                      <input [(ngModel)]="selectedLangerr.SelectLate" placeholder="SelectLate"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectStart: </label>
+                      <input [(ngModel)]="selectedLangerr.SelectStart" placeholder="SelectStart"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectStartTime: </label>
+                      <input [(ngModel)]="selectedLangerr.SelectStartTime" placeholder="SelectStartTime"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>ShareLocation: </label>
+                      <input [(ngModel)]="selectedLangerr.ShareLocation" placeholder="ShareLocation"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SiteName: </label>
+                      <input [(ngModel)]="selectedLangerr.SiteName" placeholder="SiteName"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>Title: </label>
+                      <input [(ngModel)]="selectedLangerr.Title" placeholder="Title"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>Twitter: </label>
+                      <input [(ngModel)]="selectedLangerr.Twitter" placeholder="Twitter"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>UrlInvalid: </label>
+                      <input [(ngModel)]="selectedLangerr.UrlInvalid" placeholder="UrlInvalid"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>UserNameExists: </label>
+                      <input [(ngModel)]="selectedLangerr.UserNameExists" placeholder="UserNameExists"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>UserNameSix: </label>
+                      <input [(ngModel)]="selectedLangerr.UserNameSix" placeholder="UserNameSix"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>Website: </label>
+                      <input [(ngModel)]="selectedLangerr.Website" placeholder="Website"/>
+              </fieldset>
+		      <button class="btn btn-warning" (click)="onDeSelect()">Back</button>
+          <button class="btn btn-success" (click)="onDeSelect()">Save</button>
+</div></div></div></div></div>
+
+<div *ngIf="!selectedLangerr">
+  <div class="row">
+    <div class="card text-xs-center">
+          <div class="card-block">
+              <label>Search by Id or Language Code:</label> <input #langerrSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+              <button class="btn btn-danger" (click)="add(langerrSearch.value)"> Add </button>
+          </div>
+          <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+       <tr *ngFor="let langerr of langerrs" (click)="onSelect(langerr)"
+      [class.selected]="langerr === selectedLangerr">
+<div *ngIf="!appservice.admin">
+          <td class="DFC"><b>{{langerr.Id}}</b></td>
+          <td class="DFC">{{langerr.DFC}}</td> 
+          <td class="DFC">{{langerr.DLC}}</td> 
+          <td class="DFC">{{langerr.User}}</td> 
+          <td class="DFC">{{langerr.Lang}}</td>  
+          <td class="DFC">{{langerr.CellCodeInvalid}}</td> 
+          <td class="DFC">{{langerr.CellCodeNoMatch}}</td> 
+	</div>
+        <div *ngIf="appservice.admin">
+          <td class="DFC"><b>{{langerr.Id}}</b></td>
+          <td class="DFC">{{langerr.Lang}}</td>  
+          <td class="DFC">{{langerr.CellCodeInvalid}}</td> 
+          <td class="DFC">{{langerr.CellCodeNoMatch}}</td> 
+          <td class="DFC">{{langerr.CellProvider}}</td> 
+          <td class="DFC">{{langerr.DeleteConflictMessage}}</td> 
+          <td class="DFC">{{langerr.DriveLongest}}</td> 
+          <td class="DFC">{{langerr.EnterDescrip}}</td> S
+          <td class="DFC">{{langerr.EnterDomain}}</td> 
+          <td class="DFC">{{langerr.EmailDup}}</td> 
+          <td class="DFC">{{langerr.EmailRequired}}</td> 
+          <td class="DFC">{{langerr.EmailReset}}</td> 
+          <td class="DFC">{{langerr.EventDate}}</td> 
+          <td class="DFC">{{langerr.EventEndTime}}</td> 
+          <td class="DFC">{{langerr.EventName}}</td> 
+          <td class="DFC">{{langerr.EventStartTime}}</td> 
+          <td class="DFC">{{langerr.EventUpdate}}</td>  
+          <td class="DFC">{{langerr.FromToSame}}</td> 
+          <td class="DFC">{{langerr.FaceBook}}</td> 
+          <td class="DFC">{{langerr.GooglePlus}}</td> 
+          <td class="DFC">{{langerr.LateBeforeEarly}}</td> 
+          <td class="DFC">{{langerr.MapAddress}}</td> 
+          <td class="DFC">{{langerr.MailPrefs}}</td> 
+          <td class="DFC">{{langerr.NameFour}}</td> 
+          <td class="DFC">{{langerr.NameFull}}</td> 
+          <td class="DFC">{{langerr.PasswordSix}}</td> 
+          <td class="DFC">{{langerr.PasswordConfirm}}</td> 
+          <td class="DFC">{{langerr.PasswordMisMatch}}</td> 
+          <td class="DFC">{{langerr.Phone}}</td> 
+          <td class="DFC">{{langerr.PostUrl}}</td> 
+          <td class="DFC">{{langerr.PostText}}</td> 
+          <td class="DFC">{{langerr.RecordNotSaved}}</td> 
+          <td class="DFC">{{langerr.RideShortest}}</td> 
+          <td class="DFC">{{langerr.Route}}</td> 
+          <td class="DFC">{{langerr.SearchTerms}}</td> 
+          <td class="DFC">{{langerr.SelectDate}}</td> 
+          <td class="DFC">{{langerr.SelectDest}}</td> 
+          <td class="DFC">{{langerr.SelectEarly}}</td> 
+          <td class="DFC">{{langerr.SelectEndTime}}</td> 
+          <td class="DFC">{{langerr.SelectLate}}</td> 
+          <td class="DFC">{{langerr.SelectStart}}</td> 
+          <td class="DFC">{{langerr.SelectStartTime}}</td> 
+          <td class="DFC">{{langerr.ShareLocation}}</td> 
+          <td class="DFC">{{langerr.SiteName}}</td> 
+          <td class="DFC">{{langerr.Title}}</td> 
+          <td class="DFC">{{langerr.Twitter}}</td> 
+          <td class="DFC">{{langerr.UrlInvalid}}</td> 
+          <td class="DFC">{{langerr.UserNameExists}}</td> 
+          <td class="DFC">{{langerr.UserNameSix}}</td> 
+          <td class="DFC">{{langerr.Website}}</td>  
+	 </div>
+	<td><button class="btn-xs btn-danger" (click)="delete(event); $event.stopPropagation()">x</button></td>
+</tr></tbody></table>
+</div>
+</div></div></div></div>
+
+
+
+
+
+
