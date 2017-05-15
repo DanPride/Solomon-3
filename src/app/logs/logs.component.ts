@@ -2,9 +2,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Log }                from './log';
-import { LogService }         from './logs.service';
-import { AppService }         from '../app.service'
+import { Log } from './log';
+import { LogService } from './logs.service';
+import { AppService } from '../app.service';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -21,12 +21,11 @@ export class LogsComponent implements OnInit {
   constructor(
     private logservice: LogService,
     private router: Router,
-    private appservice: AppService) { 
-         this.logservice.searchLogs(this.term$).subscribe(results =>this.logs = results);
-  
+    private appservice: AppService) {
+         this.logservice.searchLogs(this.term$).subscribe(results => this.logs = results);
     }
 
-searchLogs(term$){
+searchLogs(term$) {
   this.term$.subscribe(term => this.searchLogs(term$));
 }
   getAllLogs(): void {

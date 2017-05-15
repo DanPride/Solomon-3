@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Post }                from './post';
-import { PostService }         from './posts.service';
+import { Post } from './post';
+import { PostService } from './posts.service';
 
 
 @Component({
@@ -18,7 +18,6 @@ export class PostsComponent implements OnInit {
     private postservice: PostService,
     private router: Router) { }
 
-  
   getPosts(): void {
     this.postservice
         .getPosts()

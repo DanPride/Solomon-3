@@ -1,49 +1,48 @@
-
- <div class="container">	
+<div class="container">	
     <div *ngIf="selectedBug" class="selectedBug">
        <div class="row">
 		    	<div class="card text-xs-center">
 			      	<div class="card-block">
 				      	<div class="card-header">
-                <fieldset class="form-group  col-md-12">
-                  {{selectedBug.Name}}
-                    </fieldset>
-                <fieldset class="form-group col-md-3">
-                        {{selectedBug.Id}} 
-                </fieldset>
-                <fieldset class="form-group col-md-3">
-                        {{selectedBug.DFC | date}} 
-                </fieldset>
-                <fieldset class="form-group col-md-3">
-                        {{selectedBug.DLC | date}} 
-                </fieldset>
-                <fieldset class="form-group col-md-3">
-                        {{selectedBug.User}}
-                </fieldset>
-                <fieldset class="form-group  col-md-12">
-                      <label>Name: </label>
-                      <input [(ngModel)]="selectedBug.Name" placeholder="Name"/>
-                </fieldset>
-                <fieldset class="form-group  col-md-12">
-                      <label>Description: </label>
-                      <input [(ngModel)]="selectedBug.Description" placeholder="Description" />
-                  </fieldset>
-                  <fieldset class="form-group  col-md-12">
-                        <label>Screen: </label>
-                        <input [(ngModel)]="selectedBug.Screen" placeholder="Screen" />
-                </fieldset>
-                <fieldset class="form-group  col-md-12">
-                        <label>Platform: </label>
-                        <input [(ngModel)]="selectedBug.Platform" placeholder="Platform" />
-                </fieldset>
-                <fieldset class="form-group  col-md-12">
-                        <label>Browser: </label>
-                          <input [(ngModel)]="selectedBug.Browser" placeholder="Browser" />
-                </fieldset>
-                <fieldset class="form-group  col-md-12">
-                        <label>Priority: </label>
-                        <input [(ngModel)]="selectedBug.Priority" placeholder="Priority" />
-                </fieldset>
+			                <fieldset class="form-group  col-md-12">
+			                  {{selectedBug.Name}}
+			                    </fieldset>
+			                <fieldset class="form-group col-md-3">
+			                        {{selectedBug.Id}} 
+			                </fieldset>
+			                <fieldset class="form-group col-md-3">
+			                        {{selectedBug.DFC | date}} 
+			                </fieldset>
+			                <fieldset class="form-group col-md-3">
+			                        {{selectedBug.DLC | date}} 
+			                </fieldset>
+			                <fieldset class="form-group col-md-3">
+			                        {{selectedBug.User}}
+			                </fieldset>
+			                <fieldset class="form-group  col-md-12">
+			                      <label>Name: </label>
+			                      <input [(ngModel)]="selectedBug.Name" placeholder="Name"/>
+			                </fieldset>
+			                <fieldset class="form-group  col-md-12">
+			                      <label>Description: </label>
+			                      <input [(ngModel)]="selectedBug.Description" placeholder="Description" />
+			                  </fieldset>
+			                  <fieldset class="form-group  col-md-12">
+			                        <label>Screen: </label>
+			                        <input [(ngModel)]="selectedBug.Screen" placeholder="Screen" />
+			                </fieldset>
+			                <fieldset class="form-group  col-md-12">
+			                        <label>Platform: </label>
+			                        <input [(ngModel)]="selectedBug.Platform" placeholder="Platform" />
+			                </fieldset>
+			                <fieldset class="form-group  col-md-12">
+			                        <label>Browser: </label>
+			                          <input [(ngModel)]="selectedBug.Browser" placeholder="Browser" />
+			                </fieldset>
+			                <fieldset class="form-group  col-md-12">
+			                        <label>Priority: </label>
+			                        <input [(ngModel)]="selectedBug.Priority" placeholder="Priority" />
+			                </fieldset>
                 <button class="btn btn-warning" (click)="onDeSelect()">Back</button>
                 <button class="btn btn-success" (click)="onDeSelect()">Save</button>
 </div></div></div></div></div>
@@ -65,6 +64,7 @@
                         <td class="Id">{{bug.Name}}</td>
                         <td class="Id">{{bug.Description}}</td> 
                         <td class="Id">{{bug.Screen}}</td> 
+                        
                         <td class="Id">{{bug.Platform}}</td> 
                         <td class="Id">{{bug.Browser}}</td> 
                         <td class="Id">{{bug.Priority}}</td> 
@@ -82,3 +82,4 @@
 
 
  -->
+ </div>

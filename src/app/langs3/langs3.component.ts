@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Lang3 }                from './lang3';
-import { Lang3Service }         from './langs3.service';
-import { AppService }           from '../app.service';
+import { Lang3 } from './lang3';
+import { Lang3Service } from './langs3.service';
+import { AppService } from '../app.service';
 
-import { Observable }           from 'rxjs/Observable';
-import { Subject }              from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-langs3',
@@ -22,7 +22,7 @@ export class Langs3Component implements OnInit {
     private lang3service: Lang3Service,
     private router: Router,
     private appservice: AppService) {
-        this.lang3service.searchLangs3(this.term$).subscribe(results =>this.langs3 = results);
+        this.lang3service.searchLangs3(this.term$).subscribe(results => this.langs3 = results);
      }
 
   getAllLangs3(): void {
@@ -30,9 +30,9 @@ export class Langs3Component implements OnInit {
         .getAllLangs3()
         .then(langs3 => this.langs3 = langs3);
   }
-searchLangs3(term$){
+searchLangs3(term$) {
   this.lang3service.searchLangs3(term$)
-  .subscribe(term=>this.langs3 = term);
+  .subscribe(term => this.langs3 = term);
 }
   add(name: string): void {
     name = name.trim();

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { PhotosComponent } from './photos.component';
 import { PhotoService } from './photos.service';
-import { PhotosRoutingModule } from "./photos-routing.module";
+import { PhotosRoutingModule } from './photos-routing.module';
 import { PhotoComponent } from './photo.component';
 
 
@@ -13,9 +13,9 @@ import { PhotoComponent } from './photo.component';
   imports: [
      CommonModule,
     FormsModule,
-    PhotosRoutingModule 
+    PhotosRoutingModule
   ],
   declarations: [PhotosComponent, PhotoComponent],
-  providers:[PhotoService]
+  providers: [PhotoService]
 })
 export class PhotosModule { }

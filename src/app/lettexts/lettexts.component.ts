@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Lettext }                from './lettext';
-import { LettextService }         from './lettexts.service';
-import { AppService }         from '../app.service';
+import { Lettext } from './lettext';
+import { LettextService } from './lettexts.service';
+import { AppService } from '../app.service';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -17,13 +17,11 @@ export class LettextsComponent implements OnInit {
   lettexts: Lettext[];
   selectedLettext: Lettext;
   term$ = new Subject<string>();
-  
   constructor(
     private lettextservice: LettextService,
     private router: Router,
-    private appservice : AppService) {
-         this.lettextservice.searchLettexts(this.term$).subscribe(results =>this.lettexts = results);
-  
+    private appservice: AppService) {
+         this.lettextservice.searchLettexts(this.term$).subscribe(results => this.lettexts = results);
      }
   getAllLettexts(): void {
     this.lettextservice
@@ -31,8 +29,8 @@ export class LettextsComponent implements OnInit {
         .then(lettexts => this.lettexts = lettexts);
   }
 
-  searchLettexts(term$){
-    this.term$.subscribe(term =>this.searchLettexts(term$));
+  searchLettexts(term$) {
+    this.term$.subscribe(term => this.searchLettexts(term$));
   }
 
   add(name: string): void {

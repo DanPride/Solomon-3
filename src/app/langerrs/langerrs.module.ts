@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { LangerrsComponent } from './langerrs.component';
-import { LangerrsRoutingModule } from "./langerrs-routing.module";
+import { LangerrsRoutingModule } from './langerrs-routing.module';
 import { LangerrDetailComponent } from './langerr.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    LangerrsRoutingModule 
+    LangerrsRoutingModule
   ],
   declarations: [LangerrsComponent, LangerrDetailComponent],
-  providers:[]
+  providers: []
 })
 export class LangerrsModule { }

@@ -1,4 +1,4 @@
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import {Observable } from 'rxjs/Observable';
 import { Iso3166 } from './iso3166';
@@ -17,13 +17,13 @@ export class Iso3166Service {
                .then(response => response.json() as Iso3166[])
                .catch(this.handleError);
   }
-searchIso3166s(term$:Observable<string>, debounceMs = 400){
+searchIso3166s(term$: Observable<string>, debounceMs = 400) {
   return term$.debounceTime(400)
   .distinctUntilChanged()
   .switchMap(term => this.rawsearch(term));
 }
 
-rawsearch(term:string){
+rawsearch(term: string) {
   return this.http.get(`${this.iso3166sUrl}&search=${term}`)
   .map(response => response.json() as Iso3166[]);
 }
@@ -66,10 +66,3 @@ rawsearch(term:string){
   }
 }
 
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

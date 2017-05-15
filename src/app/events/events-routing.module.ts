@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EventsComponent } from "./events.component";
-import { EventsShortComponent } from "./eventsshort.component";
-import { EventComponent } from "./event.component";
+import { EventsComponent } from './events.component';
+import { EventsShortComponent } from './eventsshort.component';
+import { EventComponent } from './event.component';
 
 const eventroutes: Routes = [
 
-    { path:'', 
+    { path: '',
     children: [
-      {path: '', component: EventsComponent}, 
-       {path: 'short', component: EventsShortComponent}, 
+      {path: '', component: EventsComponent},
+       {path: 'short', component: EventsShortComponent},
       { path: '/:id', component: EventComponent }
     ]
   }

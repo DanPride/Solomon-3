@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { LogsComponent } from './logs.component';
 import { LogService } from './logs.service';
-import { LogsRoutingModule } from "./logs-routing.module";
+import { LogsRoutingModule } from './logs-routing.module';
 import { LogComponent } from './log.component';
 
 @NgModule({
@@ -14,6 +14,6 @@ import { LogComponent } from './log.component';
     LogsRoutingModule
   ],
   declarations: [LogsComponent, LogComponent],
-  providers:[LogService]
+  providers: [LogService]
 })
 export class LogsModule { }

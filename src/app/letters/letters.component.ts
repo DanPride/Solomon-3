@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Letter }                from './letter';
-import { LetterService }         from './letters.service';
-import { AppService }         from '../app.service';
+import { Letter } from './letter';
+import { LetterService } from './letters.service';
+import { AppService } from '../app.service';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -24,15 +24,13 @@ export class LettersComponent implements OnInit {
     private appservice: AppService) {
     this.letterservice.searchLetters(this.term$).subscribe(results => this.letters = results);
     }
-
-  
   getAllLetters(): void {
     this.letterservice
         .getAllLetters()
         .then(letters => this.letters = letters);
   }
-searchLetters(term$){
-    this.term$.subscribe(term =>this.searchLetters(term$));
+searchLetters(term$) {
+    this.term$.subscribe(term => this.searchLetters(term$));
 }
   add(name: string): void {
     name = name.trim();

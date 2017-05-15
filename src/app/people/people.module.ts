@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from  '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
-import { PeopleComponent } from "./people.component";
-import { PeopleRoutingModule } from "./people-routing.module";
-import { PersonComponent } from './person.component'
+import { PeopleComponent } from './people.component';
+import { PeopleRoutingModule } from './people-routing.module';
+import { PersonComponent } from './person.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    PeopleRoutingModule 
+    PeopleRoutingModule
   ],
   declarations: [PeopleComponent, PersonComponent ],
-  providers:[]
+  providers: []
 })
 export class PeopleModule { }

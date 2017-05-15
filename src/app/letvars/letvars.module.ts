@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { LetvarsComponent } from './letvars.component';
 import { LetvarService } from './letvars.service';
-import { LetvarsRoutingModule } from "./letvars-routing.module";
+import { LetvarsRoutingModule } from './letvars-routing.module';
 import { LetvarDetailComponent } from './letvar.component';
 
 @NgModule({
@@ -14,6 +14,6 @@ import { LetvarDetailComponent } from './letvar.component';
       LetvarsRoutingModule
   ],
   declarations: [LetvarsComponent, LetvarDetailComponent],
-  providers:[LetvarService]
+  providers: [LetvarService]
 })
 export class LetvarsModule { }

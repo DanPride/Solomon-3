@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Feed }                from './feed';
-import { FeedService }         from './feeds.service';
+import { Feed } from './feed';
+import { FeedService } from './feeds.service';
 
 
 @Component({
@@ -18,7 +18,6 @@ export class FeedsComponent implements OnInit {
     private feedservice: FeedService,
     private router: Router) { }
 
-  
   getFeeds(): void {
     this.feedservice
         .getFeeds()

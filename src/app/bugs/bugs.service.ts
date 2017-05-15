@@ -1,5 +1,5 @@
-import { Injectable }    from '@angular/core';
-import { Headers, Http,URLSearchParams } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Headers, Http, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Bug } from './bug';
 
@@ -8,7 +8,6 @@ export class BugService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   private bugsUrl = 'https://solomonschariot.com/jsonfeed.php?domain=bugs';  // URL to web api
- 
   constructor(private http: Http) { }
 
   getAllBugs(): Promise<Bug[]> {
@@ -21,10 +20,10 @@ export class BugService {
     searchBugs(term$: Observable<string>, debounceMs = 400) {
     return term$.debounceTime(400)
       .distinctUntilChanged()
-      .switchMap(term => this.rawSearch(term))
+      .switchMap(term => this.rawSearch(term));
   }
 
-  rawSearch(term:string){
+  rawSearch(term: string) {
     return  this.http.get(`${this.bugsUrl}&search=${term}`)
       .map(response => response.json() as Bug[]);
   }
@@ -66,11 +65,3 @@ export class BugService {
     return Promise.reject(error.message || error);
   }
 }
-
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

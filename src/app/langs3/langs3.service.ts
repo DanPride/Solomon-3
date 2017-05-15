@@ -1,7 +1,7 @@
 
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import { Observable }    from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import { Lang3 } from './lang3';
 
 @Injectable()
@@ -19,13 +19,13 @@ export class Lang3Service {
                .catch(this.handleError);
   }
 
-searchLangs3(term$:Observable<string>, debounceMS=400){
+searchLangs3(term$: Observable<string>, debounceMS = 400) {
   return term$.debounceTime(400)
   .distinctUntilChanged()
-  .switchMap(term => this.rawsearch(term))
+  .switchMap(term => this.rawsearch(term));
 }
 
-rawsearch(term:string){
+rawsearch(term: string) {
   return this.http.get(`${this.langs3Url}&search=${term}`)
   .map(response => response.json() as Lang3[]);
 }
@@ -68,10 +68,3 @@ rawsearch(term:string){
   }
 }
 
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

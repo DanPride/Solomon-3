@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Langerr }                from './langerr';
-import { LangerrService }         from './langerrs.service';
-import { AppService }             from '../app.service';
+import { Langerr } from './langerr';
+import { LangerrService } from './langerrs.service';
+import { AppService } from '../app.service';
 
-import { Observer }               from 'rxjs/Observer';
-import { Subject }                from 'rxjs/Subject';
+import { Observer } from 'rxjs/Observer';
+import { Subject } from 'rxjs/Subject';
 
 
 @Component({
@@ -46,7 +46,7 @@ export class LangerrsComponent implements OnInit {
         .delete(langerr.Id)
         .then(() => {
           this.langerrs = this.langerrs.filter(h => h !== langerr);
-          if (this.selectedLangerr=== langerr) { this.selectedLangerr = null; }
+          if (this.selectedLangerr === langerr) { this.selectedLangerr = null; }
         });
   }
 

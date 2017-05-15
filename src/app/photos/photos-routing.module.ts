@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PhotosComponent } from "./photos.component";
+import { PhotosComponent } from './photos.component';
 
 
 const photosroutes: Routes = [
-     { path:'', component: PhotosComponent}
+     { path: '', component: PhotosComponent}
    ];
 
 

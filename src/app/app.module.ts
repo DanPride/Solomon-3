@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {AppComponent} from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {AppService} from './app.service';
+import { AppService } from './app.service';
 import { BugService } from './bugs/bugs.service';
 import { CommentService } from './comments/comments.service';
 import { DayService } from './days/days.service';
@@ -57,8 +57,40 @@ import 'rxjs/add/operator/toPromise';
     AppComponent
   ],
   providers: [
-    AppService, BugService, CommentService, DriveService, EventService, OutputService, PersonService, PlaceService, RideService, RunService, 
-    UserService],
+    AppService,
+    BugService,
+    CommentService,
+    DayService,
+    DomainService,
+    DriveService,
+    EventService,
+    FeedService,
+    InvoiceService,
+    Iso3166Service,
+    Iso639Service,
+    LangerrService,
+    LangService,
+    Lang1Service,
+    Lang2Service,
+    Lang3Service,
+    Lang4Service,
+    LetterService,
+    LettextService,
+    LetvarService,
+    LineitemService,
+    LogService,
+    OutputService,
+    PersonService,
+    PhotoService,
+    PlaceService,
+    PopupService,
+    PostService,
+    RideService,
+    RunService,
+    Sched86Service,
+    ScheduleService,
+    UserService,
+    ZeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

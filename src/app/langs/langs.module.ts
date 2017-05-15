@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { LangsComponent } from './langs.component';
-import { LangsRoutingModule } from "./langs-routing.module";
+import { LangsRoutingModule } from './langs-routing.module';
 import { LangDetailComponent } from './lang.component';
 
 @NgModule({
-  imports: [   
+  imports: [
     CommonModule,
     FormsModule,
-    LangsRoutingModule 
+    LangsRoutingModule
     ],
-    declarations: [LangsComponent, LangDetailComponent], 
+    declarations: [LangsComponent, LangDetailComponent],
     providers: []
 })
 export class LangsModule { }

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { User }                from './user';
-import { UserService }         from './users.service';
-import {AppService }          from '../app.service';
+import { User } from './user';
+import { UserService } from './users.service';
+import {AppService } from '../app.service';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -17,15 +17,14 @@ export class UsersComponent implements OnInit {
   users: User[];
   selectedUser: User;
   term$ = new Subject<string>();
-  
   constructor(
     private userservice: UserService,
     private router: Router,
     private appservice: AppService) {
-         this.userservice.searchUsers(this.term$).subscribe(results =>this.users = results);
+         this.userservice.searchUsers(this.term$).subscribe(results => this.users = results);
      }
-searchUsers(term$){
-   this.term$.subscribe(term =>this.searchUsers(term$));
+searchUsers(term$) {
+   this.term$.subscribe(term => this.searchUsers(term$));
     }
   getAllUsers(): void {
     this.userservice
@@ -62,7 +61,7 @@ searchUsers(term$){
     this.selectedUser = null;
   }
 
-  gotoDetail(user:User): void {
+  gotoDetail(user: User): void {
     this.router.navigate(['users/user', user.Id]);
   }
 }

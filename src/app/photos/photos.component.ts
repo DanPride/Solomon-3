@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Photo }                from './photo';
-import { PhotoService }         from './photos.service';
+import { Photo } from './photo';
+import { PhotoService } from './photos.service';
 
 
 @Component({
@@ -18,7 +18,6 @@ export class PhotosComponent implements OnInit {
     private photoservice: PhotoService,
     private router: Router) { }
 
-  
   getPhotos(): void {
     this.photoservice
         .getPhotos()

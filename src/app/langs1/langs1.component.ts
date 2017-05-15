@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Lang1 }                from './lang1';
-import { Lang1Service }         from './langs1.service';
-import { AppService }           from '../app.service';
+import { Lang1 } from './lang1';
+import { Lang1Service } from './langs1.service';
+import { AppService } from '../app.service';
 
-import { Subject }              from 'rxjs/Subject';
-import { Observable }           from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-langs1',
@@ -21,12 +21,12 @@ export class Langs1Component implements OnInit {
   constructor(
     private lang1service: Lang1Service,
     private router: Router,
-    private appservice : AppService) {
-         this.lang1service.searchLangs1(this.term$).subscribe(results =>this.langs1 = results);
+    private appservice: AppService) {
+         this.lang1service.searchLangs1(this.term$).subscribe(results => this.langs1 = results);
      }
 
-searchLangs1(term$){
-   this.term$.subscribe(term =>this.searchLangs1(term$));
+searchLangs1(term$) {
+   this.term$.subscribe(term => this.searchLangs1(term$));
  }
 
 getAllLangs1(): void {

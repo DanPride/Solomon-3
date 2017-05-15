@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Langs2Component } from "./langs2.component";
+import { Langs2Component } from './langs2.component';
 
 
 const langs2routes: Routes = [
-     { path:'', component: Langs2Component}
+     { path: '', component: Langs2Component}
    ];
 
 

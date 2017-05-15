@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DaysComponent } from "./days.component";
+import { DaysComponent } from './days.component';
 
 
 const daysroutes: Routes = [
-     { path:'', component: DaysComponent}
+     { path: '', component: DaysComponent}
    ];
 
 

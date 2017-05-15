@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LangerrsComponent } from "./langerrs.component";
+import { LangerrsComponent } from './langerrs.component';
 
 
 const langerrsroutes: Routes = [
-     { path:'', component: LangerrsComponent}
+     { path: '', component: LangerrsComponent}
    ];
 
 

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Bug }                from './bug';
-import { BugService }         from './bugs.service';
-import { AppService }         from '../app.service';
+import { Bug } from './bug';
+import { BugService } from './bugs.service';
+import { AppService } from '../app.service';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -17,15 +17,14 @@ export class BugsComponent implements OnInit {
   bugs: Bug[];
   selectedBug: Bug;
   term$ = new Subject<string>();
-  
   constructor(
     private bugservice: BugService,
-    private router: Router) { 
-         this.bugservice.searchBugs(this.term$).subscribe(results =>this.bugs = results);
+    private router: Router) {
+         this.bugservice.searchBugs(this.term$).subscribe(results => this.bugs = results);
     }
 
-  searchBugs(term$){
-   this.term$.subscribe(term =>this.searchBugs(term$));
+  searchBugs(term$) {
+   this.term$.subscribe(term => this.searchBugs(term$));
  }
   getAllBugs(): void {
     this.bugservice

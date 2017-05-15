@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Sched86 }                from './sched86';
-import { Sched86Service }         from './sched86s.service';
-import { AppService }             from '../app.service';
+import { Sched86 } from './sched86';
+import { Sched86Service } from './sched86s.service';
+import { AppService } from '../app.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
@@ -21,13 +21,12 @@ export class Sched86sComponent implements OnInit {
     private sched86service: Sched86Service,
     private router: Router,
     private appservice: AppService) {
-      this.sched86service.searchSched86s(this.term$).subscribe(results => this.sched86s = results)
+      this.sched86service.searchSched86s(this.term$).subscribe(results => this.sched86s = results);
      }
 
-  searchSched86s(term$){
-   this.term$.subscribe(term =>this.searchSched86s(term$));
+  searchSched86s(term$) {
+   this.term$.subscribe(term => this.searchSched86s(term$));
     }
-  
 
   getAllSched86s(): void {
     this.sched86service

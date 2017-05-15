@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Langs3Component } from "./langs3.component";
+import { Langs3Component } from './langs3.component';
 
 
 const langs3routes: Routes = [
-     { path:'', component: Langs3Component}
+     { path: '', component: Langs3Component}
    ];
 
 

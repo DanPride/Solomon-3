@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Langs4Component } from "./langs4.component";
+import { Langs4Component } from './langs4.component';
 
 
 const langs4routes: Routes = [
-     { path:'', component: Langs4Component}
+     { path: '', component: Langs4Component}
    ];
 
 

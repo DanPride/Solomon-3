@@ -1,7 +1,7 @@
 
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import { Observable }    from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import { Lang1 } from './lang1';
 
 @Injectable()
@@ -12,15 +12,15 @@ export class Lang1Service {
 
   constructor(private http: Http) { }
 
-searchLangs1(term$:Observable<string>,debounceMS=400){
+searchLangs1(term$: Observable<string>, debounceMS = 400) {
 return term$.debounceTime(400)
 .distinctUntilChanged()
 .switchMap(term => this.rawsearch(term));
 }
 
-rawsearch(term:string){
+rawsearch(term: string) {
   return this.http.get(`${this.langs1Url}&search=${term}`)
-  .map(response=>response.json() as Lang1[]);
+  .map(response => response.json() as Lang1[]);
 }
 
 getAllLangs1(): Promise<Lang1[]> {
@@ -70,10 +70,3 @@ getAllLangs1(): Promise<Lang1[]> {
   }
 }
 
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

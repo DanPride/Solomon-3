@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Lang4 }                from './lang4';
-import { Lang4Service }         from './langs4.service';
-import { AppService }           from '../app.service';
+import { Lang4 } from './lang4';
+import { Lang4Service } from './langs4.service';
+import { AppService } from '../app.service';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -21,11 +21,10 @@ export class Langs4Component implements OnInit {
   constructor(
     private lang4service: Lang4Service,
     private router: Router,
-    private appservice : AppService) {
+    private appservice: AppService) {
       this.lang4service.searchLangs4(this.term$).subscribe(results => this.langs4 = results);
      }
 
-  
   getAllLangs4(): void {
     this.lang4service
         .getAllLangs4()

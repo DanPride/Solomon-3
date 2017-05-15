@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Event }                from './event';
-import { EventService }         from './events.service';
-import { AppService }           from '../app.service';
+import { Event } from './event';
+import { EventService } from './events.service';
+import { AppService } from '../app.service';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
-import { Run }  from '../runs/run';
-import { RunService }         from '../runs/runs.service';
+import { Run } from '../runs/run';
+import { RunService } from '../runs/runs.service';
 
 @Component({
   selector: 'app-events',
@@ -26,27 +26,26 @@ export class EventsShortComponent implements OnInit {
   constructor(
     private eventservice: EventService,
     private router: Router,
-    private appservice : AppService,
+    private appservice: AppService,
     private runservice: RunService) {
-      this.eventservice.searchEvents(this.term$).subscribe(results =>this.events = results);
+      this.eventservice.searchEvents(this.term$).subscribe(results => this.events = results);
     }
 
- searchEvents(term$){
-   this.term$.subscribe(term =>this.searchEvents(term$));
+ searchEvents(term$) {
+   this.term$.subscribe(term => this.searchEvents(term$));
  }
   getAllEvents(): void {
     this.eventservice
         .getAllEvents()
         .then(events => this.events = events);
   }
-  getAllRuns():void{
+  getAllRuns(): void {
     this.runservice
     .getAllRuns()
-    .then(runs=> this.runs = runs)
+    .then(runs => this.runs = runs);
   }
   addEvent(EventName: string): void {
     EventName = EventName.trim();
-    
   }
   delete(event: Event): void {
     this.eventservice

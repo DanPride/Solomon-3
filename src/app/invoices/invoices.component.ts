@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Invoice }                from './invoice';
-import { InvoiceService }         from './invoices.service';
+import { Invoice } from './invoice';
+import { InvoiceService } from './invoices.service';
 
 
 @Component({
@@ -18,7 +18,6 @@ export class InvoicesComponent implements OnInit {
     private invoiceservice: InvoiceService,
     private router: Router) { }
 
-  
   getInvoices(): void {
     this.invoiceservice
         .getInvoices()

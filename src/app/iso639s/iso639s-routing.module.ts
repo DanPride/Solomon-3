@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Iso639sComponent } from "./iso639s.component";
+import { Iso639sComponent } from './iso639s.component';
 
 
 const iso639sroutes: Routes = [
-     { path:'', component: Iso639sComponent}
+     { path: '', component: Iso639sComponent}
    ];
 
 

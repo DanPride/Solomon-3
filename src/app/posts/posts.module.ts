@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { PostsComponent } from './posts.component';
 import { PostService } from './posts.service';
-import { PostsRoutingModule } from "./posts-routing.module";
+import { PostsRoutingModule } from './posts-routing.module';
 import { PostComponent } from './post.component';
 
 
@@ -13,9 +13,9 @@ import { PostComponent } from './post.component';
   imports: [
      CommonModule,
     FormsModule,
-    PostsRoutingModule 
+    PostsRoutingModule
   ],
   declarations: [PostsComponent, PostComponent],
-  providers:[PostService]
+  providers: [PostService]
 })
 export class PostsModule { }

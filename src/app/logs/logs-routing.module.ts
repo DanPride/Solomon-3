@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LogsComponent } from "./logs.component";
+import { LogsComponent } from './logs.component';
 
 
 const logsroutes: Routes = [
-     { path:'', component: LogsComponent}
+     { path: '', component: LogsComponent}
    ];
 
 

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LettersComponent } from "./letters.component";
-import { LetterComponent } from "./letter.component";
+import { LettersComponent } from './letters.component';
+import { LetterComponent } from './letter.component';
 
 const lettersroutes: Routes = [
-     { path:'', component: LettersComponent}
+     { path: '', component: LettersComponent}
    ];
 
 

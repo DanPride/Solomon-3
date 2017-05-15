@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Iso3166 }                from './iso3166';
-import { Iso3166Service }         from './iso3166s.service';
-import { AppService }             from '../app.service';
+import { Iso3166 } from './iso3166';
+import { Iso3166Service } from './iso3166s.service';
+import { AppService } from '../app.service';
 
 import { Observable } from 'rxjs/Observable';
-import { Subject }    from 'rxjs/Subject';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-iso3166s',
@@ -22,16 +22,14 @@ export class Iso3166sComponent implements OnInit {
     private iso3166service: Iso3166Service,
     private router: Router,
     private appservice: AppService) {
-          this.iso3166service.searchIso3166s(this.term$).subscribe(results =>this.iso3166s = results);
+          this.iso3166service.searchIso3166s(this.term$).subscribe(results => this.iso3166s = results);
      }
-
-  
   getAllIso3166s(): void {
     this.iso3166service
         .getAllIso3166s()
         .then(iso3166s => this.iso3166s = iso3166s);
   }
-searchIso3166s(term$){
+searchIso3166s(term$) {
   this.term$.subscribe(term => this.searchIso3166s(term$));
 }
   add(name: string): void {

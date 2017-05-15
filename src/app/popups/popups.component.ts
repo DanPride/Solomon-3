@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Popup }                from './popup';
-import { PopupService }         from './popups.service';
-import { AppService }           from '../app.service';
+import { Popup } from './popup';
+import { PopupService } from './popups.service';
+import { AppService } from '../app.service';
 
-import { Subject }              from 'rxjs/Subject';
-import { Observer }             from 'rxjs/Observer';
+import { Subject } from 'rxjs/Subject';
+import { Observer } from 'rxjs/Observer';
 
 @Component({
   selector: 'app-popups',
@@ -23,7 +23,6 @@ export class PopupsComponent implements OnInit {
     private router: Router,
     private appservice: AppService) { }
 
-  
   getAllPopups(): void {
     this.popupservice
         .getAllPopups()

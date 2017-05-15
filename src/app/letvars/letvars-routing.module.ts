@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LetvarsComponent } from "./letvars.component";
+import { LetvarsComponent } from './letvars.component';
 
 
 const letvarsroutes: Routes = [
-     { path:'', component: LetvarsComponent}
+     { path: '', component: LetvarsComponent}
    ];
 
 

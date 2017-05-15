@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Lineitem }                from './lineitem';
-import { LineitemService }         from './lineitems.service';
+import { Lineitem } from './lineitem';
+import { LineitemService } from './lineitems.service';
 
 
 @Component({
@@ -18,7 +18,6 @@ export class LineitemsComponent implements OnInit {
     private lineitemservice: LineitemService,
     private router: Router) { }
 
-  
   getLineitems(): void {
     this.lineitemservice
         .getLineitems()

@@ -1,5 +1,5 @@
 
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Headers, Http, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Lang4 } from './lang4';
@@ -19,13 +19,13 @@ getAllLangs4(): Promise<Lang4[]> {
                .catch(this.handleError);
   }
 
-searchLangs4(term$:Observable<string>, debounceMS=400){
+searchLangs4(term$: Observable<string>, debounceMS = 400) {
 return term$.debounceTime(400)
 .distinctUntilChanged()
 .switchMap(term => this.rawsearch(term));
 }
 
-rawsearch(term:string){
+rawsearch(term: string) {
   return this.http.get(`${this.langs4Url}&search=${term}`)
   .map(response => response.json() as Lang4[]);
 }
@@ -69,10 +69,3 @@ getLang4(Id: number): Promise<Lang4> {
   }
 }
 
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

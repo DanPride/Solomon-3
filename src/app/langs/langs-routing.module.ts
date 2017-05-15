@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LangsComponent } from "./langs.component";
+import { LangsComponent } from './langs.component';
 
 const langsRoutes: Routes = [
-     { path:'', component: LangsComponent}
+     { path: '', component: LangsComponent}
    ];
 
 

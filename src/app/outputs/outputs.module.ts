@@ -14,6 +14,6 @@ import { OutputComponent } from './output.component';
     OutputsRoutingModule
   ],
   declarations: [OutputsComponent, OutputComponent],
-  providers:[OutputService]
+  providers: [OutputService]
 })
 export class OutputsModule { }

@@ -2,9 +2,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Lang }                from './lang';
-import { LangService }         from './langs.service';
-import { AppService }         from '../app.service';
+import { Lang } from './lang';
+import { LangService } from './langs.service';
+import { AppService } from '../app.service';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -21,13 +21,12 @@ export class LangsComponent implements OnInit {
   constructor(
     private langservice: LangService,
     private router: Router,
-    private appservice:AppService) {
-       this.langservice.searchLangs(this.term$).subscribe(results =>this.langs = results);
+    private appservice: AppService) {
+       this.langservice.searchLangs(this.term$).subscribe(results => this.langs = results);
      }
-searchLangs(term$){
-   this.term$.subscribe(term =>this.searchLangs(term$));
+searchLangs(term$) {
+   this.term$.subscribe(term => this.searchLangs(term$));
  }
-  
   getAllLangs(): void {
     this.langservice
         .getAllLangs()

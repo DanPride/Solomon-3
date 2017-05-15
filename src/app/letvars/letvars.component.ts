@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Letvar }                from './letvar';
-import { LetvarService }         from './letvars.service';
-import { AppService }         from '../app.service';
+import { Letvar } from './letvar';
+import { LetvarService } from './letvars.service';
+import { AppService } from '../app.service';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -21,18 +21,16 @@ export class LetvarsComponent implements OnInit {
   constructor(
     private letvarservice: LetvarService,
     private router: Router,
-    private appservice : AppService) {
-         this.letvarservice.searchLetvars(this.term$).subscribe(results =>this.letvars = results);
-  
+    private appservice: AppService) {
+         this.letvarservice.searchLetvars(this.term$).subscribe(results => this.letvars = results);
      }
 
-  
   getAllLetvars(): void {
     this.letvarservice
         .getAllLetvars()
         .then(letvars => this.letvars = letvars);
   }
-searchLetvars(term$){
+searchLetvars(term$) {
   this.term$.subscribe(term => this.searchLetvars(term$));
 }
   add(name: string): void {

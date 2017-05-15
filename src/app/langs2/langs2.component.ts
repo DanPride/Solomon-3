@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Lang2 }                from './lang2';
-import { Lang2Service }         from './langs2.service';
-import { AppService }           from '../app.service';
+import { Lang2 } from './lang2';
+import { Lang2Service } from './langs2.service';
+import { AppService } from '../app.service';
 
-import { Observable }           from 'rxjs/Observable';
-import { Subject }              from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 
 @Component({
@@ -22,20 +22,19 @@ export class Langs2Component implements OnInit {
   constructor(
     private lang2service: Lang2Service,
     private router: Router,
-    private appservice: AppService) { 
-        this.lang2service.searchLangs2(this.term$).subscribe(results =>this.langs2 = results);
+    private appservice: AppService) {
+        this.lang2service.searchLangs2(this.term$).subscribe(results => this.langs2 = results);
     }
 
-  
   getAllLang2s(): void {
     this.lang2service
         .getAllLangs2()
         .then(langs2 => this.langs2 = langs2);
   }
 
-searchLangs2(term$){
+searchLangs2(term$) {
   this.lang2service.searchLangs2(term$)
-  .subscribe(term=>this.langs2 = term);
+  .subscribe(term => this.langs2 = term);
 }
   add(name: string): void {
     name = name.trim();

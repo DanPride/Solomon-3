@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { PlacesComponent } from './places.component';
-import { PlacesRoutingModule } from "./places-routing.module";
+import { PlacesRoutingModule } from './places-routing.module';
 import { PlaceComponent } from './place.component';
 
 
@@ -11,9 +11,9 @@ import { PlaceComponent } from './place.component';
   imports: [
     CommonModule,
     FormsModule,
-    PlacesRoutingModule 
+    PlacesRoutingModule
   ],
-  declarations: [PlacesComponent, PlaceComponent], 
-  providers:[]
+  declarations: [PlacesComponent, PlaceComponent],
+  providers: []
 })
 export class PlacesModule { }

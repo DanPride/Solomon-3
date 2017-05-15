@@ -14,6 +14,6 @@ import { FeedDetailComponent } from './feed.component';
     FeedsRoutingModule
   ],
   declarations: [FeedsComponent, FeedDetailComponent],
-  providers:[FeedService]
+  providers: [FeedService]
 })
 export class FeedsModule { }

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Iso639 }                from './iso639';
-import { Iso639Service }         from './iso639s.service';
-import { AppService }            from '../app.service';
+import { Iso639 } from './iso639';
+import { Iso639Service } from './iso639s.service';
+import { AppService } from '../app.service';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -22,7 +22,7 @@ export class Iso639sComponent implements OnInit {
     private iso639service: Iso639Service,
     private router: Router,
     private appservice: AppService) {
-      this.iso639service.searchIso639s(this.term$).subscribe(results =>this.iso639s = results);
+      this.iso639service.searchIso639s(this.term$).subscribe(results => this.iso639s = results);
      }
 
   getAllIso639s(): void {
@@ -30,7 +30,7 @@ export class Iso639sComponent implements OnInit {
         .getAllIso639s()
         .then(iso639s => this.iso639s = iso639s);
   }
-searchIso639s(term$){
+searchIso639s(term$) {
   this.term$.subscribe(term => this.searchIso639s(term$));
 }
   add(name: string): void {

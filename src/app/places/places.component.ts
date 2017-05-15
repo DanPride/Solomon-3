@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Place }                from './place';
-import { PlaceService }         from './places.service';
+import { Place } from './place';
+import { PlaceService } from './places.service';
 
 import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable'
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-places',
@@ -16,16 +16,15 @@ export class PlacesComponent implements OnInit {
   places: Place[];
   selectedPlace: Place;
   term$ = new Subject<string>();
-  
   constructor(
     private placeservice: PlaceService,
-    private router: Router) { 
-      this.placeservice.searchPlaces(this.term$).subscribe(results =>this.places = results);
+    private router: Router) {
+      this.placeservice.searchPlaces(this.term$).subscribe(results => this.places = results);
     }
-searchPlaces(term$){
+searchPlaces(term$) {
     this.term$.subscribe(term => this.searchPlaces(term$));
 }
-getAllPlaces(): void { 
+getAllPlaces(): void {
     this.placeservice
         .getAllPlaces()
         .then(places => this.places = places);
@@ -53,7 +52,7 @@ getAllPlaces(): void {
   onSelect(place: Place): void {
     this.selectedPlace = place;
   }
-  onDeSelect(): void{
+  onDeSelect(): void {
     this.selectedPlace = null;
   }
   gotoDetail(): void {

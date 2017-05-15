@@ -58,7 +58,7 @@ export class Lang {
   EventDescrip: string;
   EventName: string;
   EventSearch: string;
-  EventSelectDate: string; 
+  EventSelectDate: string;
   EnterTwoDigit: string;
   EveryWeek: string;
   Example: string;
@@ -66,7 +66,7 @@ export class Lang {
   Find: string;
   FirstNameLastName: string;
   ForText: string;
-  FromText: string;
+ fromText: string;
   GetGPS: string;
   GooglePlus: string;
   Here: string;
@@ -109,6 +109,4 @@ export class Lang {
   OnUserSched: string;
   OnePlace: string;
   Owner: string;
-
-
 }

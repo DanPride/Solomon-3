@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Day }                from './day';
-import { DayService }         from './days.service';
-import { AppService }         from '../app.service';
+import { Day } from './day';
+import { DayService } from './days.service';
+import { AppService } from '../app.service';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -21,11 +21,11 @@ export class DaysComponent implements OnInit {
   constructor(
     private dayservice: DayService,
     private router: Router,
-    private appservice:AppService) { 
-          this.dayservice.searchDays(this.term$).subscribe(results =>this.days = results);
+    private appservice: AppService) {
+          this.dayservice.searchDays(this.term$).subscribe(results => this.days = results);
      }
-  searchDays(term$){
-   this.term$.subscribe(term =>this.searchDays(term$));
+  searchDays(term$) {
+   this.term$.subscribe(term => this.searchDays(term$));
  }
   getAllDays(): void {
     this.dayservice
