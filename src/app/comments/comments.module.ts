@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CommentsComponent } from './comments.component';
 import { CommentsRoutingModule } from './comments-routing.module';
 import { CommentDetailComponent } from './comment.component';
+//import {WidgetsModule } from '../widgets/widgets.module';
 
 @NgModule({
   imports: [

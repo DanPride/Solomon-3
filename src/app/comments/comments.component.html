@@ -102,11 +102,11 @@
                   <label>Search by UserId or Date:</label><input #CommentSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Name" />
                 </div>
  <div class="table-responsive">
-                   <table class="table">
-                      <tbody>
+   <table class="table">
+      <tbody>
 	  <tr *ngFor="let comment of comments" (click)="onSelect(comment)"
       [class.selected]="comment === selectedComment"  class="list-group-item">
-      <div *ngIf="!appservice.admin">
+        <div *ngIf="appservice.admin;else admindata">
         		<td><b>{{comment.Id}}</b></td> 
 				<td>{{comment.DFC| date}}</td>
 				<td class="Id">{{comment.DLC | date}}</td>
@@ -121,7 +121,7 @@
 				<td class="Id">{{comment.RideScore}}</td> 
 				<td class="Id">{{comment.RideComments}}</td> 
         </div>
-         <div *ngIf="appservice.admin">
+        <ng-template #admindata>
         <td class="Id"><b>{{comment.Id}}</b></td> 
 				<td class="Id">{{comment.DrivePid}}</td> 
 				<td class="Id">{{comment.DriveDate | date}}</td> 
@@ -131,8 +131,8 @@
 				<td class="Id">{{comment.DriveScore}}</td> 
 				<td class="Id">{{comment.DriveComments}}</td> 
 				<td class="Id">{{comment.Charge}}</td> 
-     <td><button class="btn-xs btn-danger" (click)="delete(iso639); $event.stopPropagation()">x</button></td> 
-                    </div>
+    			<td><button class="btn-xs btn-danger" (click)="delete(iso639); $event.stopPropagation()">x</button></td> 
+                </ng-template>>
               </tr>
         </tbody>
     </table>
