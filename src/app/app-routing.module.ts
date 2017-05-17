@@ -34,7 +34,8 @@ const appRoutes: Routes = [
   {path: 'sched86s', loadChildren: './sched86s/sched86s.module#Sched86sModule'},
   {path: 'schedules', loadChildren: './schedules/schedules.module#SchedulesModule'},
   {path: 'users', loadChildren: './users/users.module#UsersModule'},
-  {path: 'zeros', loadChildren: './zeros/zeros.module#ZerosModule'}
+  {path: 'users', loadChildren: './users/users.module#UsersModule'},
+  {path: 'zeros', loadChildren: './widgets/widgets.module#WidgetsModule'}
 ];
 
 @NgModule({

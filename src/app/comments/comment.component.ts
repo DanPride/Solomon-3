@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './comment.component.html',
   styleUrls: ['./comment.component.css']
 })
-export class CommentDetailComponent implements OnInit {
+export class CommentComponent implements OnInit {
 
   constructor() { }
 

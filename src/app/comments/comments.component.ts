@@ -16,7 +16,7 @@ import { Observable } from 'rxjs/Observable';
 export class CommentsComponent implements OnInit {
   comments: Comment[];
   selectedComment: Comment;
- term$ = new Subject<string>();
+  term$ = new Subject<string>();
   constructor(
     private commentservice: CommentService,
     private router: Router,

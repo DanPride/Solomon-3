@@ -19,7 +19,8 @@ export class BugsComponent implements OnInit {
   term$ = new Subject<string>();
   constructor(
     private bugservice: BugService,
-    private router: Router) {
+    private router: Router,
+    private appservice: AppService) {
          this.bugservice.searchBugs(this.term$).subscribe(results => this.bugs = results);
     }
 

@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { BugService } from './bugs.service';
 import { BugsRoutingModule } from './bugs-routing.module';
-import { BugsComponent } from './bugs.component';
 import { BugComponent } from './bug.component';
+import { BugsComponent } from './bugs.component';
 
 @NgModule({
   imports: [
@@ -13,7 +12,7 @@ import { BugComponent } from './bug.component';
     FormsModule,
     BugsRoutingModule
    ],
-   declarations: [BugsComponent, BugComponent],
-   providers: [BugService]
+   declarations: [BugComponent, BugsComponent],
+   providers: []
 })
 export class BugsModule { }

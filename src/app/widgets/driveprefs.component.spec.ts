@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { CommentComponent } from './comment.component';
+import { DriveprefsComponent } from './driveprefs.component';
 
-describe('CommentComponent', () => {
-  let component: CommentComponent;
-  let fixture: ComponentFixture<CommentComponent>;
+describe('DriveprefsComponent', () => {
+  let component: DriveprefsComponent;
+  let fixture: ComponentFixture<DriveprefsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommentComponent ]
+      declarations: [ DriveprefsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CommentComponent);
+    fixture = TestBed.createComponent(DriveprefsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

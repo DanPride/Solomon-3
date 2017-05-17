@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { CommentsComponent } from './comments.component';
+import { CommentComponent } from './comment.component';
 import { CommentsRoutingModule } from './comments-routing.module';
-import { CommentDetailComponent } from './comment.component';
-//import {WidgetsModule } from '../widgets/widgets.module';
+
+import {WidgetsModule } from '../widgets/widgets.module';
 
 @NgModule({
   imports: [
@@ -13,12 +14,11 @@ import { CommentDetailComponent } from './comment.component';
     FormsModule,
     CommentsRoutingModule
   ],
-     declarations: [CommentsComponent, CommentDetailComponent],
+     declarations: [CommentsComponent, CommentComponent],
      providers: []
 
 })
 export  class CommentsModule { }
-
 
 
 
