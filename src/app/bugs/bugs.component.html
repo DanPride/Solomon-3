@@ -53,10 +53,9 @@
          <label>Search Bugs by Id or Name:</label> <input #bugSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
          <button class="btn btn-danger" (click)="add(bugSearch.value)"> Add </button>
      </div>
-     <div class="table-responsive">
-           <table class="table table-striped">
+   <div *ngIf="!appservice.admin else admin_data">
+        <table class="table table-striped">
            <thead><tr>
-              <div *ngIf="!appservice.admin else admin_data">
                <th>Id</th>
                <th>DFC</th>
                <th>DLC</th>
@@ -68,14 +67,8 @@
                <th>Browser</th>
                <th>Priority</th>
                <th>xxx</th>
-               </div>
-           <ng-template #admin_data>
-                <th class="Id"><b>Id</b></th>
-            </ng-template>
           </tr></thead><tbody>
-	  <tr *ngFor="let bug of bugs" (click)="onSelect(bug)"
-	      [class.selected]="bug === selectedBug" class="list-group-item">
-	          <div *ngIf="!appservice.admin else admin_data">
+	  <tr *ngFor="let bug of bugs" (click)="onSelect(bug)">
                      <td><b>{{bug.Id}}</b></td>
                      <td class="Id">{{bug.DFC}}</td> 
                      <td class="Id">{{bug.DLC}}</td> 
@@ -88,11 +81,18 @@
                      <td class="Id">{{bug.Priority}}</td> 
                      <td><button class="btn-xs btn-danger"
                  (click)="delete(event); $event.stopPropagation()">x</button></td>
-              </div>
-              <ng-template #admin_data>
-                          <td class="Id"><b>{{bug.Id}}</b></td>
-               </ng-template>
              </tr>
             </tbody></table>
-        </div>
+            </div>
+            <ng-template #admin_data>
+                <table class="table table-striped">
+           			<thead><tr>
+                      <th class="Id"><b>Id</b></th>
+                      </tr></thead><tbody>
+                <tr *ngFor="let bug of bugs" (click)="onSelect(bug)">
+                          <td class="Id"><b>{{bug.Id}}</b></td>
+                          </tr>
+                          </tbody>
+                          </table>
+               </ng-template>
 </div></div></div></div>

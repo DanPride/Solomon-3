@@ -160,7 +160,7 @@
 		             <th>Button</th>
                    </tr></thead><tbody>
                    <tr *ngFor="let ride of rides" (click)="onSelect(ride)">
-                           <td class="Id">{{ride.Id}}</td>
+                   <td class="Id">{{ride.Id}}</td>
                     <td class="DateText">{{ride.DFC}}<br>{{ride.DLC}}</td>
                     <td class="Id">*{{ride.Processed}}*<br>{{ride.SchedId}}</td>
                     <td class="Id">{{ride.PO}}<br>{{ride.User}}</td> 

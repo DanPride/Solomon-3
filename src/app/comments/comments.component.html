@@ -122,7 +122,7 @@
 				<td class="Id">{{comment.RideComments}}</td> 
         </div>
         <ng-template #admindata>
-        <td class="Id"><b>{{comment.Id}}</b></td> 
+        		<td class="Id"><b>{{comment.Id}}</b></td> 
 				<td class="Id">{{comment.DrivePid}}</td> 
 				<td class="Id">{{comment.DriveDate | date}}</td> 
 				<td class="Id">{{comment.DriveTime}}</td> 
@@ -132,9 +132,10 @@
 				<td class="Id">{{comment.DriveComments}}</td> 
 				<td class="Id">{{comment.Charge}}</td> 
     			<td><button class="btn-xs btn-danger" (click)="delete(iso639); $event.stopPropagation()">x</button></td> 
-                </ng-template>>
+                </ng-template>
               </tr>
         </tbody>
     </table>
 </div></div></div></div>
+</div>
 
