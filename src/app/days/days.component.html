@@ -54,12 +54,33 @@
               <label>Search Events by Id or Text:</label> <input #eventSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
               <button class="btn btn-danger" (click)="addEvent(eventSearch.value)"> Add </button>
           </div>
-          <div class="table-responsive">
-             <div *ngIf="!{{appservice.admin}}">
-                <table class="table table-striped">
-                    <tbody>
-                 <tr *ngFor="let day of days" (click)="onSelect(day)"
-                 [class.selected]="day === selectedDay" class="list-group-item">
+    <div *ngIf="!appservice.admin else admin_data">
+        <table class="table table-striped">
+           <thead><tr>
+               <th>Id</th>
+               <th>xD</th>
+               <th>xE</th>
+               <th>xL</th>
+               <th>xO</th>
+               <th>xR</th>
+               <th>xR0</th>
+               <th>xR1</th>
+               <th>xR2</th>
+               <th>xS</th>
+               <th>x86</th>
+               <th>xDS</th>
+               <th>xRS</th>
+               <th>xO3</th>
+                 <th>M</th>
+                   <th>P</th>
+                     <th>H</th>
+                       <th>Sp</th>
+                         <th>Vid</th>
+                           <th>F</th>
+                             <th>NA</th>
+               <th>xxx</th>
+          </tr></thead><tbody>
+                 <tr *ngFor="let day of days" (click)="onSelect(day)">
                         <td class="Id"><b>{{day.Id}}</b></td>
 	      				<td class="XDrives">{{day.XDrives}} </td>
                         <td class="XEvents">{{day.XEvents}}</td>
@@ -81,40 +102,50 @@
 						<td class="Video"> {{day.Video}}</td>
 						<td class="FeadCnt"> {{day.FeadCnt}}</td>
 						<td class="NoAct"> {{day.NoAct}}</td>
-						<td class="button"><button class="btn-sm btn-danger" (click)="delete(day); $event.stopPropagation()">x</button></td>
-                        </div>
-                        <div *ngIf="appservice.admin">
-                        <td class="Id"><b>{{day.Id}}</b></td>
-                        <td class="DFC">{{day.DFC}} </td>
-                        <td class="DLC">{{day.DLC | date}}</td>
-                        <td class="User">{{day.User}}</td>
-						<td class="NoAct7">{{day.NoAct7}}</td>
-						<td class="NoAct30">{{day.NoAct30}}</td>
-						<td class="NoAct60">{{day.NoAct60}}</td>
-						<td class="NoAct90">{{day.NoAct90}}</td>
-						<td class="DriveCnt">{{day.DriveCnt}}</td>
-						<td class="EventCnt">{{day.EventCnt}}</td>
-						<td class="FeedCnt">{{day.FeedCnt}}</td>
-						<td class="InactCnt">{{day.InactCnt}}</td>
-						<td class="OutputCnt">{{day.OutputCnt}}</td>
-						<td class="PeopleCnt">{{day.PeopleCnt}}</td>
-						<td class="PlaceCnt">{{day.PlaceCnt}}</td>
-						<td class="UserCnt">{{day.UserCnt}}</td>
-						<td class="RideCnt">{{day.RideCnt}}</td>
-						<td class="RunCnt">{{day.RunCnt}}</td>  
-						<td class="SchedCnt">{{day.SchedCnt}}</td> 
-						<td class="Sched86Cnt">{{day.Sched86Cnt}}</td> 
-						<td class="DayTime">{{day.DayTime}}</td> 
-						<td class="Face">{{day.Face}}</td> 
-						<td class="About">{{day.About}}</td> 
-						<td class="Holy">{{day.Holy}}</td> 
-						<td class="Promo">{{day.Promo}}</td> 
-						<td class="TCode2">{{day.TCode2}}</td> 	
-						<td class="button"><button class="btn-sm btn-danger" (click)="delete(day); $event.stopPropagation()">x</button></td>												
-						</div>
+						<td class="button"><button class="btn-sm btn-danger" (click)="delete(day); $event.stopPropagation()">x</button></td>           
                 </tr>
             </tbody></table>
         </div>
+            <ng-template #admin_data>
+                <table class="table table-striped">
+           			<thead><tr>
+                      <th class="Id"><b>Id</b></th>
+                      </tr></thead><tbody>
+                <tr *ngFor="let day of days" (click)="onSelect(day)">
+	                       	<td class="Id"><b>{{day.Id}}</b></td>
+	                        <td class="DFC">{{day.DFC}} </td>
+	                        <td class="DLC">{{day.DLC | date}}</td>
+	                        <td class="User">{{day.User}}</td>
+							<td class="NoAct7">{{day.NoAct7}}</td>
+							<td class="NoAct30">{{day.NoAct30}}</td>
+							<td class="NoAct60">{{day.NoAct60}}</td>
+							<td class="NoAct90">{{day.NoAct90}}</td>
+							<td class="DriveCnt">{{day.DriveCnt}}</td>
+							<td class="EventCnt">{{day.EventCnt}}</td>
+							<td class="FeedCnt">{{day.FeedCnt}}</td>
+							<td class="InactCnt">{{day.InactCnt}}</td>
+							<td class="OutputCnt">{{day.OutputCnt}}</td>
+							<td class="PeopleCnt">{{day.PeopleCnt}}</td>
+							<td class="PlaceCnt">{{day.PlaceCnt}}</td>
+							<td class="UserCnt">{{day.UserCnt}}</td>
+							<td class="RideCnt">{{day.RideCnt}}</td>
+							<td class="RunCnt">{{day.RunCnt}}</td>  
+							<td class="SchedCnt">{{day.SchedCnt}}</td> 
+							<td class="Sched86Cnt">{{day.Sched86Cnt}}</td> 
+							<td class="DayTime">{{day.DayTime}}</td> 
+							<td class="Face">{{day.Face}}</td> 
+							<td class="About">{{day.About}}</td> 
+							<td class="Holy">{{day.Holy}}</td> 
+							<td class="Promo">{{day.Promo}}</td> 
+							<td class="TCode2">{{day.TCode2}}</td> 	
+							<td class="button"><button class="btn-sm btn-danger" (click)="delete(day); $event.stopPropagation()">x</button></td>												
+	                      </tr>
+                     </tbody>
+                   </table>
+               </ng-template>
+               
 </div></div></div></div>
 
 
+
+          

@@ -19,6 +19,3 @@ import {WidgetsModule } from '../widgets/widgets.module';
 
 })
 export  class CommentsModule { }
-
-
-

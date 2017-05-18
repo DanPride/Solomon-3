@@ -2,8 +2,8 @@
        <div *ngIf="selectedComment" class="selectedComment">
         <div class="row">
           <div class="card text-xs-center">
-				    <div class="card-block">
-             <div class="card-header">
+			 <div class="card-block">
+             	<div class="card-header">
                 <fieldset class="form-group  col-md-12">
                   {{selectedComment.DriveDate}}
                     </fieldset>
@@ -93,20 +93,33 @@
               </fieldset>
  <button class="btn btn-warning"  (click)="onDeSelect()">View Comment</button>
  <button class="btn btn-success" (click)="onDeSelect()">View List</button>
-  </div></div></div></div></div>
+</div></div></div></div></div></div>
 
-   <div *ngIf="!selectedComment">
+<div *ngIf="!selectedComment">
           <div class="row">
             <div class="card text-xs-center">
                 <div class="card-block">
                   <label>Search by UserId or Date:</label><input #CommentSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Name" />
                 </div>
- <div class="table-responsive">
-   <table class="table">
+  <div *ngIf="!appservice.admin else admin_data">
+        <table class="table table-striped">
+           <thead><tr>
+           		<th>Id</th>
+               	<th>DFC</th>
+               	<th>DLC</th>
+               	<th>User</th>
+               	<th>Id</th>
+               	<th>DFC</th>
+               	<th>DLC</th>
+               	<th>User</th>
+               	<th>Id</th>
+               	<th>DFC</th>
+               	<th>DLC</th>
+               	<th>User</th>
+               	<th>User</th>
+           </tr></thead>
       <tbody>
-	  <tr *ngFor="let comment of comments" (click)="onSelect(comment)"
-      [class.selected]="comment === selectedComment"  class="list-group-item">
-        <div *ngIf="appservice.admin;else admindata">
+	  <tr *ngFor="let comment of comments" (click)="onSelect(comment)">
         		<td><b>{{comment.Id}}</b></td> 
 				<td>{{comment.DFC| date}}</td>
 				<td class="Id">{{comment.DLC | date}}</td>
@@ -120,22 +133,30 @@
 				<td class="Id">{{comment.RideFromName}}</td> 
 				<td class="Id">{{comment.RideScore}}</td> 
 				<td class="Id">{{comment.RideComments}}</td> 
-        </div>
-        <ng-template #admindata>
-        		<td class="Id"><b>{{comment.Id}}</b></td> 
-				<td class="Id">{{comment.DrivePid}}</td> 
-				<td class="Id">{{comment.DriveDate | date}}</td> 
-				<td class="Id">{{comment.DriveTime}}</td> 
-				<td class="Id">{{comment.DriveToName}}</td> 
-				<td class="Id">{{comment.DriveFromName}}</td> 
-				<td class="Id">{{comment.DriveScore}}</td> 
-				<td class="Id">{{comment.DriveComments}}</td> 
-				<td class="Id">{{comment.Charge}}</td> 
-    			<td><button class="btn-xs btn-danger" (click)="delete(iso639); $event.stopPropagation()">x</button></td> 
-                </ng-template>
-              </tr>
-        </tbody>
-    </table>
-</div></div></div></div>
-</div>
+			</tr>
+            </tbody></table>
+            </div>
+      <ng-template #admin_data>
+               <table class="table table-striped">
+           			<thead><tr>
+                      <th class="Id"><b>Id</b></th>
+                      </tr></thead><tbody>
+                    <tr *ngFor="let comment of comments" (click)="onSelect(comment)">
+	        		<td class="Id"><b>{{comment.Id}}</b></td> 
+					<td class="Id">{{comment.DrivePid}}</td> 
+					<td class="Id">{{comment.DriveDate | date}}</td> 
+					<td class="Id">{{comment.DriveTime}}</td> 
+					<td class="Id">{{comment.DriveToName}}</td> 
+					<td class="Id">{{comment.DriveFromName}}</td> 
+					<td class="Id">{{comment.DriveScore}}</td> 
+					<td class="Id">{{comment.DriveComments}}</td> 
+					<td class="Id">{{comment.Charge}}</td> 
+	    			<td><button class="btn-xs btn-danger" (click)="delete(iso639); $event.stopPropagation()">x</button></td> 
+	              </tr>
+      		 </tbody>
+   		 </table>
+    </ng-template>
+</div></div></div></div></div>
+
+
 

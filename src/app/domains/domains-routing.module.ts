@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DomainsComponent } from './domains.component';
+import { DomainComponent } from './domain.component';
 
 
 const domroutes: Routes = [
-     { path: '', component: DomainsComponent}
+     { path: '', component: DomainsComponent},
+      { path: ':id', component: DomainComponent}
    ];
 
 

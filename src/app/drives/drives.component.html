@@ -131,11 +131,20 @@
               <label>Search Drives by User Id or DriveFromName:</label> 
               <input #driveSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
           </div>
-          <div class="table-responsive">
-                <table class="table table-striped">
-                    <tbody>
-  <tr *ngFor="let drive of drives" (click)="onSelect(drive)"
-      [class.selected]="drive === selectedDrive" class="list-group-item">
+    <div *ngIf="!appservice.admin else admin_data">
+        <table class="table table-striped">
+           <thead><tr>
+               <th>Id</th>
+               <th>Pid<br>Did</th>
+               <th>From<br>To</th>
+               <th>Date</th>
+               <th>Start<br>End</th>
+               <th>Min<br>Max</th>
+               <th>Dist<br>Dur</th>
+               <th>Rate<br>Fee</th>
+               <th></th>
+         	 </tr></thead><tbody>
+ 			 <tr *ngFor="let drive of drives" (click)="onSelect(drive)">
       		  <td><b>{{drive.Id}}</b></td>
       		  <td class='Pid'><b>{{drive.Pid}}</b><br>{{drive.Did}}</td>
               <td class="Name">{{drive.DriveFromName}}<br>{{drive.DriveToName}}</td>
@@ -145,8 +154,22 @@
               <td class="Id">{{drive.DriveDistance}}<br>{{drive.DriveDuration}}</td>
               <td class="Rate">{{drive.DriveRate}}<br>{{drive.DriveFee | currency:'USD':true}}</td>
               <td class="button"><button class="btn-sm btn-danger" (click)="delete(drive); $event.stopPropagation()">x</button></td>
-      
-          <ng-template #admin_data>
+       </tr></tbody></table>
+       </div>
+     <ng-template #admin_data>
+        <table class="table table-striped">
+           <thead><tr>
+               <th>Id</th>
+               <th>Pid<br>Did</th>
+               <th>From<br>To</th>
+               <th>Date</th>
+               <th>Start<br>End</th>
+               <th>Min<br>Max</th>
+               <th>Dist<br>Dur</th>
+               <th>Rate<br>Fee</th>
+               <th></th>
+          </tr></thead><tbody>
+  <tr *ngFor="let drive of drives" (click)="onSelect(drive)">
               <td class="Id"><b>{{drive.Id}}</b></td>
               <td class="DateText">{{drive.DFC}}<br>{{drive.DLC}}</td>
                 <td class="Id">*{{drive.Processed}}*<br>{{drive.SchedId}}</td>
@@ -157,9 +180,8 @@
               <td class="Lat">{{drive.DriveToLat}}<br>{{drive.DriveToLng}}</td>
               <td class="TimeNum">{{drive.DriveStart}}<br>{{drive.DriveEnd}}</td>
               <td class="button"><button class="btn-sm btn-danger" (click)="delete(drive); $event.stopPropagation()">x</button></td>
-           </ng-template>
- </tr></tbody></table>
-        </div>
+ 		</tr></tbody></table>
+  </ng-template>
 </div></div></div></div>
 
 

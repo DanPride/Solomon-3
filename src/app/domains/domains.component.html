@@ -158,33 +158,47 @@
         <div class="card-block">
             <label>Search by Id:</label><input #DomainSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Domain" />
              <button class="btn btn-danger" (click)="add(domainSearch.value)"> Add </button>
-      </div>
-   <div class="table-responsive">
-                <table class="table">
-                    <tbody>
-  <tr *ngFor="let domain of domains" (click)="onSelect(domain)"
-      [class.selected]="domain === selectedDomain" class="list-group-item">
-        <div *ngIf="!appservice.admin">
-          <td class="Id"><b>{{domain.Id}}</b></td>
-             <td class="Id"><b>{{domain.Lang}}</b></td>
-          <td class="DFC">{{domain.DFC | date}}<br>{{domain.DLC | date}}</td>
-          <td class="User">{{domain.Country}}</td>
-          <td class="Did">{{domain.Pid}}</td>
-          <td class="Did">{{domain.Sid}}</td>
-          <td class="Did">{{domain.Active}}</td>
-          <td class="Did">{{domain.Domain}}</td>
-          </div>
-         <div *ngIf="appservice.admin">
-          <td class="Did">{{domain.Pid}}</td>
-          <td class="Did">{{domain.Active}}</td>
-          <td class="Did">{{domain.Domain}}</td>
-      <td><button class="btn-xs btn-danger"
-                    (click)="delete(domain); $event.stopPropagation()">x</button></td>
-                        </div>
-
-                </tr>
-            </tbody></table>
-        </div>
+      	</div>
+		<div *ngIf="!appservice.admin else admin_data">
+        	<table class="table table-striped">
+          	 <thead><tr>
+	               <th>Id</th>
+	               <th>DFC</th>
+	               <th>DLC</th>
+	               <th>User</th>
+	               <th>Name</th>
+	               <th>Descrip</th>
+	               <th>Screen</th>
+	               <th>Platform</th>
+	               <th>Browser</th>
+	               <th>Priority</th>
+	               <th>xxx</th>
+          	</tr></thead><tbody>
+	  			<tr *ngFor="let domain of domains" (click)="onSelect(domain)">
+		          	<td class="Id"><b>{{domain.Id}}</b></td>
+		          	<td class="Id"><b>{{domain.Lang}}</b></td>
+		          	<td class="DFC">{{domain.DFC | date}}<br>{{domain.DLC | date}}</td>
+		          	<td class="User">{{domain.Country}}</td>
+		          	<td class="Did">{{domain.Pid}}</td>
+		          	<td class="Did">{{domain.Sid}}</td>
+		          	<td class="Did">{{domain.Active}}</td>
+		          	<td class="Did">{{domain.Domain}}</td>
+		          	<td class="Did">{{domain.Pid}}</td>
+		          	<td class="Did">{{domain.Active}}</td>
+		          	<td class="Did">{{domain.Domain}}</td>
+		      		<td><button class="btn-xs btn-danger" (click)="delete(domain); $event.stopPropagation()">x</button></td>      
+	 			</tr>
+            	</tbody></table>
+            </div>
+            <ng-template #admin_data>
+				<table class="table table-striped">
+           			<thead><tr>
+                      <th class="Id"><b>Id</b></th>
+                </tr></thead><tbody>
+                <tr *ngFor="let bug of bugs" (click)="onSelect(bug)">
+                     <td class="Id"><b>{{bug.Id}}</b></td>
+               </tr></tbody></table>
+               </ng-template>
 </div></div></div></div>
 
 <!--{{domain.DFC}} 

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { DomainsComponent } from './domains.component';
 import { DomainService } from './domains.service';
 import { DomainsRoutingModule } from './domains-routing.module';
-import { DomainDetailComponent } from './domain.component';
+import { DomainComponent } from './domain.component';
 
 @NgModule({
   imports: [
@@ -13,7 +13,7 @@ import { DomainDetailComponent } from './domain.component';
     FormsModule,
     DomainsRoutingModule
     ],
-  declarations: [DomainsComponent, DomainDetailComponent],
+  declarations: [DomainsComponent, DomainComponent],
   providers: []
 
 })
