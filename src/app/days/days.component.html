@@ -55,11 +55,11 @@
               <button class="btn btn-danger" (click)="addEvent(eventSearch.value)"> Add </button>
           </div>
           <div class="table-responsive">
+             <div *ngIf="!{{appservice.admin}}">
                 <table class="table table-striped">
                     <tbody>
                  <tr *ngFor="let day of days" (click)="onSelect(day)"
                  [class.selected]="day === selectedDay" class="list-group-item">
-                        <div *ngIf="!appservice.admin">
                         <td class="Id"><b>{{day.Id}}</b></td>
 	      				<td class="XDrives">{{day.XDrives}} </td>
                         <td class="XEvents">{{day.XEvents}}</td>

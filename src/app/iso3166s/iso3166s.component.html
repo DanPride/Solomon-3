@@ -62,13 +62,13 @@
         <div class="card-block">
             <label>Search by Id or Language Code:</label><input #iso3166Search (input)="term$.next($event.target.value)" placeholder="Enter Id or iso3166" />
              <button class="btn btn-danger" (click)="add(iso3166Search.value)"> Add </button>
-      </div>
+      </div> 
 <div class="table-responsive">
   <table class="table">
   <tbody>
   <tr *ngFor="let iso3166 of iso3166s" (click)="onSelect(iso3166)"
       [class.selected]="iso3166 === selectedIso3166" class="list-group-item">
-				   <div *ngIf="!appservice.admin">
+		<div *ngIf="!appservice.admin">
              <td class="Id"><b>{{iso3166.Id}}</b></td> 
               <td class="Referer">{{iso3166.Lang}}</td> 
               <td class="Referer">{{iso3166.Active}}</td> 

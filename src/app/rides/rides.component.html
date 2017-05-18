@@ -115,27 +115,52 @@
   <div class="container">	
   <div class="row">
         <div class="card text-xs-center">
-          <div class="card-block">
-              <label>Search Rides by User Id or RideFromName:</label> 
-<input #rideSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
-     </div>
-   <div class="table-responsive">
-                <table class="table table-striped">
-                    <tbody>
-        <tr *ngFor="let ride of rides" (click)="onSelect(ride)"
-            [class.selected]="ride === selectedRide" class="list-group-item">
-            <div *ngIf="!appservice.admin">
-                    <td class="Id">{{ride.Id}}</td>
-                    <td class="Id">{{ride.Pid}}<br>{{ride.Did}}</td>
-                    <td class="Name">{{ride.RideFromName}}<br>{{ride.RideToName}}</td>
-                    <td class="Rate">{{ride.RideDistance}}<br>{{ride.RideDuration}}</td> 
-                    <td class="Id">{{ride.RideDate}}</td>
-                    <td class="Time">{{ride.RideStartTime}}<br>{{ride.RideEndTime}}</td>
-                    <td class="Lat">{{ride.Weight}}</td>
-                    <td class="button"><button class="btn-sm btn-danger" (click)="delete(ride); $event.stopPropagation()">x</button></td>
-              </div>
-              <div *ngIf="appservice.admin">
-                   <td class="Id">{{ride.Id}}</td>
+          	<div class="card-block">
+              	<label>Search Rides by User Id or RideFromName:</label> 
+				<input #rideSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+    		 </div>
+    		 <div *ngIf="!appservice.admin; else admin_data">
+                <table class="table table-striped table-bordered">
+                   <thead><tr>
+                      <th>Id</th>
+		              <th>Pid<br>Did</th>
+		              <th>From<br>To</th>
+		              <th>Distance<br>Duration</th>
+		              <th>Date</th>
+		              <th>Start<br>End</th>
+		              <th>Weight</th>
+		              <th>Button</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+	                   <tr *ngFor="let ride of rides" (click)="onSelect(ride)">
+                        <td class="Id">{{ride.Id}}</td>
+	                    <td class="Id">{{ride.Pid}}<br>{{ride.Did}}</td>
+	                    <td class="Name">{{ride.RideFromName}}<br>{{ride.RideToName}}</td>
+	                    <td class="Rate">{{ride.RideDistance}}<br>{{ride.RideDuration}}</td> 
+	                    <td class="Id">{{ride.RideDate}}</td>
+	                    <td class="Time">{{ride.RideStartTime}}<br>{{ride.RideEndTime}}</td>
+	                    <td class="Lat">{{ride.Weight}}</td>
+	                    <td class="button"><button class="btn-sm btn-danger" (click)="delete(ride); $event.stopPropagation()">x</button></td>
+	             	</tr>
+           		 </tbody>
+            	</table>
+            	</div>
+              <ng-template #admin_data>
+                   <table class="table table-striped table-bordered">
+                   <thead><tr>
+                      <th>Id</th>
+		              <th>Dates</th>
+		              <th>User</th>
+		              <th>Did</th>
+		              <th>Fid</th>
+		              <th>Route</th>
+		              <th>Lat</th>
+		              <th>Type</th>
+		             <th>Button</th>
+                   </tr></thead><tbody>
+                   <tr *ngFor="let ride of rides" (click)="onSelect(ride)">
+                           <td class="Id">{{ride.Id}}</td>
                     <td class="DateText">{{ride.DFC}}<br>{{ride.DLC}}</td>
                     <td class="Id">*{{ride.Processed}}*<br>{{ride.SchedId}}</td>
                     <td class="Id">{{ride.PO}}<br>{{ride.User}}</td> 
@@ -145,7 +170,7 @@
                     <td class="Lat">{{ride.RideToLat}}<br>{{ride.RideToLng}}</td>
                     <td class="Time">{{ride.RideStart}}<br>{{ride.RideEnd}}</td> 
                     <td class="button"><button class="btn-sm btn-danger" (click)="delete(ride); $event.stopPropagation()">x</button></td>
-          </div>
- </tr></tbody></table>
-        </div>
+        </tr>
+            </tbody></table>
+         </ng-template>
 </div></div></div></div>

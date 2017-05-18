@@ -54,24 +54,46 @@
               <label>Search Events by Id or Text:</label> <input #eventSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
               <button class="btn btn-danger" (click)="add(eventSearch.value)"> Add </button>
           </div>
-          <div class="table-responsive">
-                <table class="table">
-                    <tbody>
-                 <tr *ngFor="let event of events" (click)="onSelect(event)"
-                 [class.selected]="event === selectedEvent" class="list-group-item">
-                        <div *ngIf="!appservice.admin">
-                        <td class="Id"><b>{{event.Id}}</b></td>
-                        <td class="EventName">{{event.EventName}} </td>
-                           <td class="Phone">{{event.Phone}}<br>{{event.EventDate | date}}</td>
-                        <td class="StartTime">{{event.StartTime}}<br>{{event.EndTime}} </td>
-                        <td class="SiteName">{{event.SiteName}} </td>
-                        <td class="MapAddress"> {{event.MapAddress}}</td>
-                     
-                        <td class="Invitation">{{event.Website}}</td>
-                        <td><button class="btn-xs btn-danger"
-                    (click)="delete(event); $event.stopPropagation()">x</button></td>
-                        </div><div *ngIf="appservice.admin">
-                        <td class="Id"><b>{{event.Id}}</b></td>
+           <div *ngIf="!appservice.admin; else admin_data">
+                <table class="table table-striped table-bordered">
+                   <thead><tr>
+                      <th>Id</th>
+		              <th>Name</th>
+		              <th>Phone</th>
+		              <th>StartTime</th>
+		              <th>SiteName</th>
+		              <th>MapAddress</th>
+		              <th> </th>
+                   </tr>
+                   </thead>
+                   <tbody>
+	                 <tr *ngFor="let event of events" (click)="onSelect(event)">
+                        <td><b>{{event.Id}}</b></td>
+                        <td>{{event.EventName}} </td>
+                        <td>{{event.Phone}}<br>{{event.EventDate | date}}</td>
+                        <td>{{event.StartTime}}<br>{{event.EndTime}} </td>
+                        <td>{{event.SiteName}} </td>
+                        <td> {{event.MapAddress}}</td>
+                        <td><button class="btn-xs btn-danger" (click)="delete(event); $event.stopPropagation()">x</button></td>
+                </tr>
+           		 </tbody>
+            	</table>
+            	</div>
+              <ng-template #admin_data>
+                   <table class="table table-striped table-bordered">
+                   <thead><tr>
+                      <th>Id</th>
+		              <th>Dates</th>
+		              <th>User</th>
+		              <th>Did</th>
+		              <th>Fid</th>
+		              <th>Route</th>
+		              <th>Lat</th>
+		              <th>Type</th>
+		             <th>Button</th>
+                   </tr></thead><tbody>
+                 <tr *ngFor="let event of events" (click)="onSelect(event)">
+                        <td><b>{{event.Id}}</b></td>
                         <td class="DFC">{{event.DFC | date}}<br>{{event.DLC | date}}</td>
                         <td class="User">{{event.User}}<br>{{event.Country}} </td>
                         <td class="Did">{{event.Did}}<br><b>{{event.Pid}}</b></td>
@@ -79,17 +101,19 @@
                         <td class="Route"> {{event.Route}}<br>{{event.GeoSource}}</td>
                         <td class="Lat"> {{event.Lat}}<br>{{event.Lng}}</td>
                         <td class="GeoType"> {{event.GeoType}}<br>{{event.GeoQual}}</td>
-                        <td class="GeoType">{{event.GeoPlaceId}}</td>
-                        <td class="GeoType"> {{event.Invitation}}</td>
-                        <td class="SearchTerms"> {{event.SearchTerms}}</td>
-                        <td class="Descrip"> {{event.Descrip}}</td>
                         <td><button class="btn-xs btn-danger"
                     (click)="delete(event); $event.stopPropagation()">x</button></td>
-                        </div>
-
                 </tr>
             </tbody></table>
+         </ng-template>
+            
+<!--                <td class="Id"><b>{{event.Id}}</b></td> -->
+<!--                  <td class="Invitation">{{event.Website}}</td> -->
+<!--                              <td class="SearchTerms"> {{event.SearchTerms}}</td> -->
+<!--                         <td class="Descrip"> {{event.Descrip}}</td> -->
+<!--                         <td><button class="btn-xs btn-danger" -->
+<!--                     (click)="delete(event); $event.stopPropagation()">x</button></td> -->
         </div>
-</div></div></div></div>
+</div></div></div>
 
 

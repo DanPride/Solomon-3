@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Domain }                from './domain';
-import { DomainService }         from './domains.service';
-import { AppService }         from '../app.service';
+import { Domain } from './domain';
+import { DomainService } from './domains.service';
+import { AppService } from '../app.service';
 
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
@@ -21,13 +21,12 @@ export class DomainsComponent implements OnInit {
     private domainservice: DomainService,
     private router: Router,
     private appservice: AppService) {
-            this.domainservice.searchDomains(this.term$).subscribe(results =>this.domains = results);
+            this.domainservice.searchDomains(this.term$).subscribe(results => this.domains = results);
 
      }
-searchDomains(term$){
-    this.term$.subscribe(term =>this.searchDomains(term$));
+searchDomains(term$) {
+    this.term$.subscribe(term => this.searchDomains(term$));
       }
-  
   getAllDomains(): void {
     this.domainservice
         .getAllDomains()

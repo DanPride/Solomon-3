@@ -3,12 +3,12 @@ import { Headers, Http , URLSearchParams} from '@angular/http';
 
 @Injectable()
 export class AppService {
-admin: boolean;
+public admin: boolean;
 private headers = new Headers({'Content-Type': 'application/json'});
 private tablesUrl = 'https://solomonschariot.com/jsonfeed.php?domain=system&search=tables';  // URL to web api
 
 
-constructor(private http: Http) { }
+constructor(private http: Http) {this.admin = false; }
 
   onAdmin(admin) {
     this.admin = !this.admin;
@@ -20,6 +20,10 @@ constructor(private http: Http) { }
                .toPromise()
                .then(response => response.json())
                .catch(this.handleError);
+  }
+
+   ngOnInit(): void {
+    this.admin = false;
   }
 private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only

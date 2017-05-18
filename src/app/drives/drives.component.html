@@ -136,8 +136,8 @@
                     <tbody>
   <tr *ngFor="let drive of drives" (click)="onSelect(drive)"
       [class.selected]="drive === selectedDrive" class="list-group-item">
-      <td><b>{{drive.Id}}</b></td>
-      <td class='Pid'><b>{{drive.Pid}}</b><br>{{drive.Did}}</td>
+      		  <td><b>{{drive.Id}}</b></td>
+      		  <td class='Pid'><b>{{drive.Pid}}</b><br>{{drive.Did}}</td>
               <td class="Name">{{drive.DriveFromName}}<br>{{drive.DriveToName}}</td>
               <td class="DFC">{{drive.DriveDate | date}}</td>
               <td class="Time">{{drive.DriveStartTime}}<br>{{drive.DriveEndTime}}</td>

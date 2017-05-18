@@ -78,7 +78,7 @@
             <label>Search by UserId or Page:</label><input #logSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or log" />
              <button class="btn btn-danger" (click)="add(logSearch.value)"> Add </button>
       </div>
-<div class="table-responsive">
+<!-- <div class="table-responsive">
   <table class="table">
   <tbody>
   <tr *ngFor="let log of logs" (click)="onSelect(log)"
@@ -104,5 +104,5 @@
            </div>
       </tr>
   </tbody></table>
-  </div></div></div></div></div>
+  </div></div></div></div></div> -->
 

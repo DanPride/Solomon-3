@@ -20,9 +20,9 @@ export class DomainService {
 searchDomains(term$: Observable<string>, debounceMs = 400) {
     return term$.debounceTime(400)
       .distinctUntilChanged()
-      .switchMap(term => this.rawSearch(term))
+      .switchMap(term => this.rawSearch(term));
   }
-  rawSearch(term:string){
+  rawSearch(term: string) {
     return  this.http.get(`${this.domainsUrl}&search=${term}`)
       .map(response => response.json() as Domain[]);
   }

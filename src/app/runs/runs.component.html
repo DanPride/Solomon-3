@@ -110,35 +110,60 @@
                   <label>Search Runs by User Id or DriveFromName:</label> <input #runSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
                   <button class="btn btn-danger" (click)="add(logSearch.value)"> Add </button>
             </div>
-          <div class="table-responsive">
-            <table class="table">
-               <tbody>
-                  <tr *ngFor="let run of runs" (click)="onSelect(run)"
-                    [class.selected]="run === selectedRun"  class="list-group-item">
-                         <div *ngIf="!appservice.admin">
-                      <td class="Id"><b>{{run.Id}}</b></td>
-                      <td class="Id">{{run.DriveId}}</td>
-                      <td class="Id">{{run.RideId}}</td>
-                      <td class="Id">{{run.DrivePid}}</td>
-                      <td class="Id">{{run.DriveFromName}}<br>{{run.DriveToName}}</td>
-                      <td class="Id">{{run.DriveDate | date}}<br>{{run.DriveTime}}</td>
-                      <td class="Id">{{run.RidePid}}</td>
-                      <td class="Id">{{run.RideFromName}}<br>{{run.RideToName}}</td>
-                      <td class="Id">{{run.RideDate | date}}<br>{{run.RideTime}}</td>
-                         <td><button class="btn-xs btn-danger" (click)="delete(log); $event.stopPropagation()">x</button></td>
-                      </div>
-                      <div *ngIf="appservice.admin">
-                      <td class="Id"><b>{{run.Id}}</b></td>
-                      <td class="Id">{{run.DFC}}</td>
-                      <td class="Id">{{run.DLC}}</td>
-                      <td class="Id">{{run.User}}</td>
-                      <td class="Id">{{run.DriveScore}}<br>{{run.DriveComments}}</td>
-                      <td class="Id">{{run.RideScore}}<br>{{run.RideComments}}</td>
-                      <td class="Id">{{run.PO}}<br>{{run.Charge}}</td>
-                         <td><button class="btn-xs btn-danger" (click)="delete(log); $event.stopPropagation()">x</button></td>
-                      </div>
-               
-                </tr>
-          </tbody>
-        </table>
-</div></div></div></div></div>
+            
+             <div *ngIf="!appservice.admin; else admin_data">
+                <table class="table table-striped table-bordered">
+                   <thead><tr>
+                      <th>Id</th>
+		              <th>Drive<br>Ride</th>
+		              <th>Driver</th>
+		              <th>From<br>To</th>
+		              <th>Date<br>Time</th>
+		              <th>Rider</th>
+		              <th>From<br>To</th>
+		              <th>Date<br>Time</th>
+		              <th></th>
+                   </tr>
+                   </thead>
+                   <tbody>
+	                    <tr *ngFor="let run of runs" (click)="onSelect(run)">
+                 		<td class="Id"><b>{{run.Id}}</b></td>
+                      	<td class="Id">{{run.DriveId}}<br>{{run.RideId}}</td>
+                      	<td class="Id">{{run.DrivePid}}</td>
+                      	<td class="Id">{{run.DriveFromName}}<br>{{run.DriveToName}}</td>
+                      	<td class="Id">{{run.DriveDate | date}}<br>{{run.DriveTime}}</td>
+                      	<td class="Id">{{run.RidePid}}</td>
+                      	<td class="Id">{{run.RideFromName}}<br>{{run.RideToName}}</td>
+                      	<td class="Id">{{run.RideDate | date}}<br>{{run.RideTime}}</td>
+                        <td><button class="btn-xs btn-danger" (click)="delete(log); $event.stopPropagation()">x</button></td>
+                      </tr>
+           		 </tbody>
+            	</table>
+            	</div>
+              <ng-template #admin_data>
+                   <table class="table table-striped table-bordered">
+                   <thead><tr>
+	                      <th>Id</th>
+			              <th>DFC</th>
+			              <th>DLC</th>
+			              <th>User</th>
+			              <th>DriveScore/Comm</th>
+			              <th>RideScore</th>
+			              <th>Lat</th>
+			              <th>Type</th>
+			             <th>Button</th>
+                   </tr></thead><tbody>
+                    <tr *ngFor="let run of runs" (click)="onSelect(run)">
+                   		<td class="Id"><b>{{run.Id}}</b></td>
+                      	<td class="Id">{{run.DFC}}</td>
+                      	<td class="Id">{{run.DLC}}</td>
+                      	<td class="Id">{{run.User}}</td>
+                      	<td class="Id">{{run.DriveScore}}<br>{{run.DriveComments}}</td>
+                      	<td class="Id">{{run.RideScore}}<br>{{run.RideComments}}</td>
+                      	<td class="Id">{{run.PO}}<br>{{run.Charge}}</td>
+                        <td><button class="btn-xs btn-danger" (click)="delete(log); $event.stopPropagation()">x</button></td>
+                 </tr>
+            </tbody></table>
+         </ng-template>
+         
+</div></div></div></div>
